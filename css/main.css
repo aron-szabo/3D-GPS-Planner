@@ -1,0 +1,153 @@
+	html, body {
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	#viewDiv {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+	
+	#files{
+		display:block;
+	}
+
+	#screenshotDiv,#addGPSDiv ,#saveGPSDiv,#confirmNewDiv{
+		position: absolute;
+		left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+		-webkit-transform: translate(-50%,-50%);
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0.8);
+	z-index: 3;
+	}
+	
+	#addGPSDiv,#saveGPSDiv,#confirmNewDiv{
+	padding-bottom:1em;
+	padding-left:1em;
+	padding-right:1em;
+	padding-top:.25em;
+	}
+	
+	
+	#endRouteBtn,#undoRouteBtn,#newRouteBtn{
+	display:none;	
+	}
+	
+	#closeGPSAdditionDiv,#closeGPSSaveDiv,#closeConfirmNewDiv{
+	opacity: 0.3;
+	float:right;
+	margin-bottom:1em;
+	display:block;
+	
+	}
+	#closeGPSAdditionDiv:hover,#closeGPSSaveDiv:hover,#closeConfirmNewDiv:hover{
+		opacity: 1;
+		cursor:default;
+		
+	}
+	
+	.hide {
+		display: none;
+	}
+
+	img {
+		border: 10px solid white;
+		box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+	}
+	
+	#saveInputContainer,#confirmNewDivContainer{
+		width:300px;
+	}
+	
+	#saveNameLabel,#confirmNewLabel{
+		display:inline-block;
+	}
+	#saveName{
+		margin-bottom:1em;
+	}
+
+	#screenshotDiv > * {
+		margin: 0.5em;
+	}
+
+	.screenshotCursor {
+		cursor: crosshair;
+	}
+
+	.action-button {
+		padding: 0.6em;
+		border: 1px solid #0079c1;
+		text-align: center;
+		background-color: white;
+		cursor: pointer;
+		display:block;
+	}
+
+	.action-button:hover,
+	.action-button:focus {
+		background: #0079c1;
+		color: white;
+	}
+
+	#maskDiv {
+		position: absolute;
+		background: rgba(255, 51, 0, 0.1);
+		border: 2px dashed rgb(255, 51, 0);
+	}
+	.screenShotCanvas {
+		display: inline-block;
+	}
+
+	.action-button{
+		display: inline-block;
+	}
+
+	#drawingCanvas{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	#headerDiv{
+		font-family: 'Vollkorn', Sans-Serif;
+		font-weight: bold;
+		background-color: rgb(42, 135, 22);
+		color: rgb(12, 71, 0);
+	}
+	#myColor{
+		height: 2.75em;
+	}
+
+	#overviewDiv {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 300px;
+      height: 200px;
+
+      z-index: 1;
+      overflow: hidden;
+    }
+
+	#extentDiv {
+      
+      position: absolute;
+      z-index: 2;
+    }
+	
+
+	#footerDiv{
+	    background-color: #212529;
+		color: #83d0f2;
+
+		}
+	#addMultipleInstructions,#fileTypeSupport{
+		margin: 0;
+		padding: 0;
+		font-size: .75em;
+	}
