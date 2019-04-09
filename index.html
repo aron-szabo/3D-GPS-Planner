@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>3D GPS Route Planner</title>
+
+<link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+
+<script src="https://js.arcgis.com/4.10/"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn">
+<link rel="stylesheet" href="css/main.css">
+
+<script src="js/satMap.js"></script>
+
+
+</head>
+
+<body>
+	<!-- Header Section -->
+	<div id="addDiv">
+
+	</div>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">Plot GPS Routes on 3D Maps</a>
+
+	  
+	</nav>
+
+
+	<!-- Main Map -->
+	<div id="viewDiv">
+	  <button id="screenshotBtn" class="action-button esri-widget" aria-label="Select screenshot area"
+	    title="Select screenshot area">Select
+	    screenshot area
+		</button>
+		<button id="addGPSBtn" class="action-button esri-widget" aria-label="Add GPS Route"
+	    title="Add GPS Route">Upload GPS Route
+		</button>
+		<button id="refreshBtn" class="action-button esri-widget" aria-label="Refresh"
+	    title="Refresh">Refresh
+		</button>
+		<button id="createRouteBtn" class="action-button esri-widget" aria-label="Create New Route"
+	    title="Create New Route">Create GPS Route
+		</button>
+		<button id="endRouteBtn" class="action-button esri-widget" aria-label="End New Route"
+	    title="End New Route">End/Save GPS Route
+		</button>
+		<button id="undoRouteBtn" class="action-button esri-widget" aria-label="Undo Last Point"
+	    title="Undo Last Point">Undo Last Point
+		</button>
+		
+
+		
+
+
+	<!-- ScreenShot PopUp Container -->
+	<div id="screenshotDiv" class="hide">
+    <img class="js-screenshot-image" id="screenshot">
+    <br>
+    <button id="downloadBtn" class="action-button" aria-label="Download image"
+      title="Download image">Download image
+		</button>
+    <button id="closeBtn" class="action-button" aria-label="Back to webscene"
+      title="Back to webscene">Back to webscene
+		</button>
+		<button id="eraserToggle" class="action-button" aria-label="Toggle eraser-brush"
+		    title="Eraser">Eraser
+		</button>
+		<input type="color" id="myColor"class="action-button" value='#ff0000' >
+		<input type="number" id="pixelWidthSelector" class="action-button" value="2.5" min='0.1' max='10' step='0.1'>
+	</div>
+	</div>
+	<!-- ScreenShoot Selection Mas -->
+	<div id="maskDiv" class="hide screenshotCursor"></div>
+	<!-- Add Route PopUp Container -->
+	<div id="addGPSDiv" class="hide">
+	<a id="closeGPSAdditionDiv">X</a>
+	<br>
+	<input type="file" id="files" name="files[]" accept=".gpx" />
+	<br>
+	<p id="addMultipleInstructions">To add Multiple Routes, Add Another File</p>
+	<p id="fileTypeSupport">Currently Only supports GPX Tracks</p>
+	
+	
+	</div>
+	
+	<!-- SaveRoute PopUp Container -->
+	<div id="saveGPSDiv" class="hide">
+	<a id="closeGPSSaveDiv">X</a>
+	<br>
+	<div id="saveInputContainer">
+	<p id="saveNameLabel">Route Name:</p>
+	<input type="text" id="saveName" />
+	</div>
+	
+	<button id="saveBtn">Save Route</button>
+	<button id="cancelSaveBtn">Cancel</button>
+	
+	</div>
+	
+	
+	<!-- Footer Section -->
+	<div id="footerDiv" class="container-fluid">
+		<h5>Created By: Aron Szabo</h5>
+		<h6>Using ArcGIS for JavaScript 4.10</h6>
+	</div>
+
+</body>
+</html>
