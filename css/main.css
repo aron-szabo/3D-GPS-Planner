@@ -151,3 +151,8 @@
 		padding: 0;
 		font-size: .75em;
 	}
+
+	#screenshotBtn,#addGPSBtn{
+		display:none;
+	}
+
